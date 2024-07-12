@@ -36,25 +36,25 @@ This project demonstrates the basics of functional programming in JavaScript by 
 
 4. Features
     Coin Counter
-    The Coin Counter application takes an amount of money and determines the exact amount of change needed in quarters, dimes, nickels, and pennies.
+      The Coin Counter application takes an amount of money and determines the exact amount of change needed in quarters, dimes, nickels, and pennies.
 
-      Recursive Implementation
+    Recursive Implementation
       The coinCounterRecursive function uses recursion to solve the problem.
 
 
-  Closure-Based Implementation
-  The createCoinCounter function returns a closure that calculates the change.
+    Closure-Based Implementation
+      The createCoinCounter function returns a closure that calculates the change.
 
-  Roman Numerals Converter
-  The Roman Numerals Converter converts numbers into Roman numerals using recursion.
-
-
-  Prime Sifting
-  The Prime Sifting module finds all prime numbers less than a given number using the Sieve of Eratosthenes and recursion.
+    Roman Numerals Converter
+      The Roman Numerals Converter converts numbers into Roman numerals using recursion.
 
 
-  Testing
-  All modules are thoroughly tested using Jest. Tests are located in the src/tests directory.
+    Prime Sifting
+      The Prime Sifting module finds all prime numbers less than a given number using the Sieve of Eratosthenes and recursion.
+
+
+    Testing
+      All modules are thoroughly tested using Jest. Tests are located in the src/tests directory.
 
 5. Run the tests with:
 
