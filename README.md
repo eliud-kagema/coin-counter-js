@@ -1,7 +1,5 @@
-markdown
-Copy code
-# Functional Programming Project
 
+# Functional Programming Project
 This project demonstrates the basics of functional programming in JavaScript by implementing a few common problems. The focus is on writing pure functions, using closures, currying functions, and recursion. 
 
 ## Table of Contents
@@ -19,143 +17,52 @@ This project demonstrates the basics of functional programming in JavaScript by 
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd functional-programming-project
-Install dependencies:
-bash
-Copy code
-npm install
-Usage
-Development Server
-To start the development server, run:
+   git clone https://github.com/eliud-kagema/coin-counter-js
+   cd coin-counter-js
 
-bash
-Copy code
-npx webpack serve
-Running Tests
-To run the tests, use:
 
-bash
-Copy code
-npm test
-Project Structure
-bash
-Copy code
-functional-programming-project/
-│
-├── src/
-│   ├── coinCounter.js          # Coin counter functionality
-│   ├── romanNumerals.js        # Roman numerals converter functionality
-│   ├── primeSieve.js           # Prime sifting functionality
-│   ├── index.js                # Entry point
-│   └── tests/                  # Test files
-│       ├── coinCounter.test.js
-│       ├── romanNumerals.test.js
-│       └── primeSieve.test.js
-│
-├── dist/                       # Distribution files
-│
-├── .babelrc                    # Babel configuration
-├── package.json                # Package configuration
-├── webpack.config.js           # Webpack configuration
-└── README.md                   # This file
-Features
-Coin Counter
-The Coin Counter application takes an amount of money and determines the exact amount of change needed in quarters, dimes, nickels, and pennies.
+2. Install dependencies:
+   ```bash
+    npm install
 
-Recursive Implementation
-The coinCounterRecursive function uses recursion to solve the problem.
 
-javascript
-Copy code
-function coinCounterRecursive(amount, coins = [25, 10, 5, 1], result = []) {
-  if (amount === 0) return result;
-  const coin = coins[0];
-  const count = Math.floor(amount / coin);
-  result.push(count);
-  return coinCounterRecursive(amount % coin, coins.slice(1), result);
-}
-Closure-Based Implementation
-The createCoinCounter function returns a closure that calculates the change.
+3. Usage
+    Development Server
+    To start the development server, run:
+   ```bash
+    npx webpack serve
+    
 
-javascript
-Copy code
-function createCoinCounter() {
-  return function(amount) {
-    const coins = [25, 10, 5, 1];
-    const result = [];
 
-    function countCoins(amount, index) {
-      if (amount === 0) return result;
-      const coin = coins[index];
-      const count = Math.floor(amount / coin);
-      result.push(count);
-      return countCoins(amount % coin, index + 1);
-    }
+4. Features
+    Coin Counter
+    The Coin Counter application takes an amount of money and determines the exact amount of change needed in quarters, dimes, nickels, and pennies.
 
-    return countCoins(amount, 0);
-  };
-}
-Roman Numerals Converter
-The Roman Numerals Converter converts numbers into Roman numerals using recursion.
+      Recursive Implementation
+      The coinCounterRecursive function uses recursion to solve the problem.
 
-javascript
-Copy code
-const romanNumerals = [
-  { value: 1000, symbol: 'M' },
-  { value: 900, symbol: 'CM' },
-  { value: 500, symbol: 'D' },
-  { value: 400, symbol: 'CD' },
-  { value: 100, symbol: 'C' },
-  { value: 90, symbol: 'XC' },
-  { value: 50, symbol: 'L' },
-  { value: 40, symbol: 'XL' },
-  { value: 10, symbol: 'X' },
-  { value: 9, symbol: 'IX' },
-  { value: 5, symbol: 'V' },
-  { value: 4, symbol: 'IV' },
-  { value: 1, symbol: 'I' },
-];
 
-function toRoman(num, index = 0) {
-  if (num === 0) return '';
-  const { value, symbol } = romanNumerals[index];
-  if (num >= value) {
-    return symbol + toRoman(num - value, index);
-  } else {
-    return toRoman(num, index + 1);
-  }
-}
-Prime Sifting
-The Prime Sifting module finds all prime numbers less than a given number using the Sieve of Eratosthenes and recursion.
+  Closure-Based Implementation
+  The createCoinCounter function returns a closure that calculates the change.
 
-javascript
-Copy code
-function sieveOfEratosthenes(n, primes = [], current = 2) {
-  if (current > n) return primes;
+  Roman Numerals Converter
+  The Roman Numerals Converter converts numbers into Roman numerals using recursion.
 
-  const isPrime = primes.every(p => current % p !== 0);
 
-  if (isPrime) primes.push(current);
+  Prime Sifting
+  The Prime Sifting module finds all prime numbers less than a given number using the Sieve of Eratosthenes and recursion.
 
-  return sieveOfEratosthenes(n, primes, current + 1);
-}
-Testing
-All modules are thoroughly tested using Jest. Tests are located in the src/tests directory.
 
-Run the tests with:
+  Testing
+  All modules are thoroughly tested using Jest. Tests are located in the src/tests directory.
 
-bash
-Copy code
-npm test
+5. Run the tests with:
+
+   ```bash
+      npm test
+
 License
 This project is licensed under the MIT License.
-
-css
-Copy code
-
-Feel free to modify the content as per your specific project details and preferences.
-
 
 
 
